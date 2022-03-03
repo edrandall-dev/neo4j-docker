@@ -8,8 +8,6 @@
 DOCKER=$(which docker)
 [ $? == 0 ] || { echo "ERROR: Check if docker is installed (and in your PATH)" ; exit 1; }
 
-#echo "Your home directory is $HOME"
-
 DATA_DIR="$HOME/docker/neo4j-volumes/data"
 LOG_DIR="$HOME/docker/neo4j-volumes/logs"
 IMPORT_DIR="$HOME/docker/neo4j-volumes/import"
@@ -33,5 +31,3 @@ $DOCKER run \
     -v $PLUGINS_DIR:/plugins \
     --env NEO4J_AUTH=neo4j/test \
     neo4j:latest
-
-
